@@ -1,6 +1,6 @@
 var utils = require('./utils');
 var cache = {
-  type: 'memcache',
+  type: 'memory',
   config: {
     host: "",
     port: ""

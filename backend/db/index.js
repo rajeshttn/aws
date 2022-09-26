@@ -6,7 +6,7 @@ module.exports.connect = async () => {
         useUnifiedTopology: true,
     }
     try {
-        await mongoose.connect('mongodb://127.0.0.1:27017/leads', mongooseOpts);
+        await mongoose.connect(process.env.db_url, mongooseOpts);
     } catch (error) {
         console.log("Error occurred while connection to db", error)
     }

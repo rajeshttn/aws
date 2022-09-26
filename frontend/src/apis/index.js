@@ -39,3 +39,14 @@ export const deleteLead = (id, cb) => {
       cb(error)
     })
 }
+
+export const uploadFileToS3 = (formData, cb) => {
+  console.log("uploadFileToS3 called")
+  axios.post(`${process.env.REACT_APP_API_URL}/api/uploadFile`, formData)
+    .then((response) => {
+      cb(null, response.data)
+    })
+    .catch((error) => {
+      cb(error)
+    })
+}

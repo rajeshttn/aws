@@ -5,7 +5,7 @@ import Modal from './components/Modal'
 import AddLeadForm from './components/AddLeadForm'
 import UpdateLeadForm from './components/UpdateLeadForm'
 import DeleteLead from './components/DeleteLead'
-import { listLeads, addLead, updateLead, deleteLead } from './apis'
+import { listLeads, addLead, updateLead, deleteLead, uploadFileToS3 } from './apis'
 import './App.css'
 
 const columns = [{
@@ -33,9 +33,28 @@ class App extends React.Component {
       errorMessage: '',
       showModalName: '',
       actionedRow: null,
-      data: []
+      data: [],
+      selectedFile: null
     }
   }
+
+  onFileChange = event => {
+    this.setState({ selectedFile: event.target.files[0] });
+  };
+
+  onFileUpload = () => {
+    const formData = new FormData();
+    formData.append(
+      "myFile",
+      this.state.selectedFile,
+      this.state.selectedFile.name
+    );
+    
+    console.log(this.state.selectedFile);
+    uploadFileToS3(formData, (error, response)=> {
+      console.log("uploadFileToS3 call >>> ", error, response)
+    })
+  };
 
   componentDidMount() {
     this.fetchLeads()
@@ -120,6 +139,12 @@ class App extends React.Component {
       <div className="app">
         <div className="add_wrapper">
           <button className="btn add_lead_modal_btn" onClick={this.showAddLeadModal}>Add Lead</button>
+        </div>
+        <div>
+          <input type="file" onChange={this.onFileChange} />
+          <button onClick={this.onFileUpload}>
+            Upload!
+          </button>
         </div>
         <Table className="leads_table" data={data} columns={columns} actions={actions} />
         <Modal

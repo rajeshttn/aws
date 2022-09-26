@@ -5,10 +5,16 @@ var swaggerUi = require('swagger-ui-express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+const dotenv = require('dotenv');
+dotenv.config();
+
+var multer = require('multer')
+const upload = multer({ dest: './public/uploads/' })
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var apisRouter = require('./apis');
+var uploadFile = require('./apis/fileupload')
 var swaggerDocument = require('./swagger.json');
 
 var app = express();
@@ -27,7 +33,11 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/api', apisRouter);
+
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+
+
+app.post('/api/uploadFile', upload.single('myFile'), uploadFile)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
