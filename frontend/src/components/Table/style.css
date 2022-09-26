@@ -1,0 +1,29 @@
+.datatable {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  background-color: #eee;
+}
+
+.datatable thead {
+  background-color: #000000;
+  color: #ffffff;
+}
+
+.datatable tr {
+  padding: 10px;
+  display: flex;
+  flex: 1;
+  border-bottom: 1px solid #ffffff;
+}
+
+.datatable th, .datatable td{
+  display: flex;
+  justify-content: flex-start;
+  flex: 1;
+}
+
+.datatable .action {
+  margin-right: 5px;
+}
+

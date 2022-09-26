@@ -1,0 +1,13 @@
+.update_lead {
+  padding: 10px;
+}
+
+.update_lead .btn_wrapper {
+  padding: 10px;
+  text-align: right;
+}
+
+.update_lead .close_lead_btn {
+  border: none;
+  margin-right: 10px;
+}

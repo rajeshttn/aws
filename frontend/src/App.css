@@ -1,0 +1,39 @@
+.app {
+  padding: 20px;
+}
+
+.add_wrapper {
+  margin-bottom: 20px;
+}
+
+.btn {
+  padding: 6px 10px;
+  background-color: #000000;
+  color: #ffffff;
+  border: 1px solid #000000;
+  border-radius: 5px;
+}
+
+.btn:focus {
+  outline: none;
+}
+
+.btn-danger {
+  background-color: red;
+  border-color: red;
+}
+
+.btn-cancel {
+  border: none;
+  background-color: transparent;
+  color: #000000;
+}
+
+.btn.disabled {
+  background-color: #eee;
+  border-color: #eee;
+}
+
+.error_wrapper {
+  padding: 20px;
+}

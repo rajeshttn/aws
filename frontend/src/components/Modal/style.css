@@ -1,0 +1,35 @@
+.modal {
+  position: fixed;
+  z-index: 500;
+  background-color: #ffffff;
+  width: 70%;
+  left: 15%;
+  top: 30%;
+  box-sizing: border-box;
+  transition: all 0.3s ease-out;
+}
+
+.modal .title {
+  background-color: #000000;
+  color: #ffffff;
+  padding: 15px 10px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.modal .close_modal {
+  font-size: 20px;
+  padding: 5px 10px;
+  position: absolute;
+  top: 7px;
+  right: 10px;
+  border-radius: 20px;
+  background-color: #d3d3d3
+}
+
+@media (min-width: 600px) {
+  .modal {
+      width: 500px;
+      left: calc(50% - 250px);
+  }
+}

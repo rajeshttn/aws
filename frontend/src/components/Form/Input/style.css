@@ -1,0 +1,25 @@
+.form-group .label {
+  display: block;
+}
+
+.form-group .label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.form-group input, .form-group select, .form-group textarea {
+  box-sizing : border-box;
+  padding: 8px;
+  width: 100%;
+}
+
+.form-group select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-color: #ffffff;
+}
+
+.form-group .required {
+  color: red;
+}

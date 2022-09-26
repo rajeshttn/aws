@@ -1,0 +1,8 @@
+.delete_lead_form {
+  padding: 30px;
+  text-align: center;
+}
+
+.delete_lead_form .delete_lead_btn {
+  margin-right: 10px;
+}

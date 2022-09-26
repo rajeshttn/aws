@@ -1,0 +1,32 @@
+.add_lead {
+  padding-bottom: 10px;
+}
+
+.add_lead .add_lead_form {
+  padding: 10px 0px 10px 10px;
+  display: flex;
+  flex: 1;
+  flex-wrap: wrap;
+}
+
+.add_lead .add_lead_form .field {
+  flex: 50%
+}
+
+.add_lead .btn_wrapper {
+  padding: 10px;
+  text-align: right;
+}
+
+.add_lead .close_lead_btn {
+  border: none;
+  margin-right: 10px;
+}
+
+.add_lead .form-group input {
+  width: 95%;
+}
+
+.add_lead .form-group select {
+  width: 95%;
+}
